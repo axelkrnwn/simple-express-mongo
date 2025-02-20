@@ -1,0 +1,11 @@
+services:
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+  web-service:
+    build: .
+    ports:
+      - 6969:6969
+    depends_on:
+      - mongo
